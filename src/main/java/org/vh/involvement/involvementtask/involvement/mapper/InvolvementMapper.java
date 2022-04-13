@@ -6,11 +6,11 @@ import org.vh.involvement.involvementtask.involvement.dto.InvolvementDTO;
 import org.vh.involvement.involvementtask.involvement.model.Involvement;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface InvolvementMapper extends ModelMapper<Involvement, InvolvementDTO> {
 
-    @Override
-    /*@Mapping(target = "id", ignore = true)
-    @Mapping(target = "parentId", ignore = true)*/
-    Involvement toEntity(InvolvementDTO dto);
+/*    @Override
+    *//*@Mapping(target = "id", ignore = true)
+    @Mapping(target = "parentId", ignore = true)*//*
+    Involvement toEntity(InvolvementDTO dto);*/
 }
