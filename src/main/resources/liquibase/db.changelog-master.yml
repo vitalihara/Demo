@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: create-tables.yml
+      relativeToChangelogFile: true
+  - include:
+      file: create-sequence.yml
+      relativeToChangelogFile: true
+#  - include:
+#      file: sectors.yml
+#      relativeToChangelogFile: true

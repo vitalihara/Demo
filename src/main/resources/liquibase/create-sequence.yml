@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: add_sectors
+      author: vitali.hara
+      changes:
+        - createSequence:
+            maxValue: 999999999999999999999999999
+            sequenceName: HIBERNATE_SEQUENCE
+            startValue: 1001
+        - createSequence:
+            maxValue: 999999999999999999999999999
+            sequenceName: SECTOR_ID
+            startValue: 1001
+            incrementBy: 50
+        - createSequence:
+            maxValue: 999999999999999999999999999
+            sequenceName: INVOLVEMENT_ID
+            startValue: 1001
+            incrementBy: 50

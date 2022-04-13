@@ -1,0 +1,16 @@
+spring:
+  main:
+    banner-mode: off
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  liquibase:
+    enabled: true
+    change-log: classpath:/liquibase/db.changelog-master.yml
+  datasource:
+    url: jdbc:mysql://localhost:3306/quotes
+    username: root
+    password: onofftelecom
+    driver-class-name: com.mysql.cj.jdbc.Driver
