@@ -5,7 +5,7 @@ spring:
     hibernate:
       ddl-auto: none
       dialect: org.hibernate.dialect.MySQL5Dialect
-      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
   liquibase:
     enabled: true
     change-log: classpath:/liquibase/db.changelog-master.yml

@@ -1,6 +1,7 @@
 package org.vh.involvement.involvementtask.sector.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.vh.involvement.involvementtask.exception.RecordNotFoundException;
 import org.vh.involvement.involvementtask.sector.dto.SectorDTO;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sectors")
 @RequiredArgsConstructor
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class SectorController {
 
     private final SectorService sectorService;

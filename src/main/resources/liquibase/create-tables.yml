@@ -10,25 +10,25 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyNmae: PK_INVOLVEMENT
-                  name: ID
+                  name: id
                   type: NUMBER(19,0)
               - column:
-                  name: NAME
+                  name: name
                   type: VARCHAR2(255)
               - column:
-                  name: PARENT_ID
+                  name: parent_id
                   type: NUMBER(19,0)
-            tableName: SECTOR
+            tableName: sector
         - addForeignKeyConstraint:
-            baseColumnNames: PARENT_ID
-            baseTableName: SECTOR
+            baseColumnNames: parent_id
+            baseTableName: sector
             constraintName: FK_SECTOR_PARENT
             deferrable: false
             initiallyDeferrable: false
             onDelete: RESTRICT
             onUpdate: RESTRICT
-            referencedColumnNames: ID
-            referencedTableName: SECTOR
+            referencedColumnNames: id
+            referencedTableName: sector
             validate: true
   - changeSet:
       id: add_involvements
@@ -41,28 +41,28 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyNmae: PK_INVOLVEMENT
-                  name: ID
+                  name: id
                   type: NUMBER(19,0)
               - column:
-                  name: NAME
+                  name: name
                   type: VARCHAR2(255)
               - column:
-                  name: SECTOR_ID
+                  name: sector_id
                   type: NUMBER(19,0)
               - column:
-                  name: AGGREEMENT
+                  name: agreement
                   type: NUMBER(1,0)
-            tableName: INVOLVEMENT
+            tableName: involvement
         - addForeignKeyConstraint:
-            baseColumnNames: SECTOR_ID
-            baseTableName: INVOLVEMENT
+            baseColumnNames: sector_id
+            baseTableName: involvement
             constraintName: FK_INVOLVEMENT_SECTOR
             deferrable: false
             initiallyDeferrable: false
             onDelete: RESTRICT
             onUpdate: RESTRICT
-            referencedColumnNames: ID
-            referencedTableName: SECTOR
+            referencedColumnNames: id
+            referencedTableName: sector
             validate: true
 
 
