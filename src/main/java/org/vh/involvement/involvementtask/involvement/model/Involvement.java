@@ -11,8 +11,10 @@ import javax.persistence.*;
 @Entity
 public class Involvement {
     @Id
-    @SequenceGenerator(name = "involvement_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "involvement_id")
+/*    @SequenceGenerator(name = "involvement_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "involvement_id")*/
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @ManyToOne

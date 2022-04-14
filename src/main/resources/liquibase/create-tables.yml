@@ -11,13 +11,16 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyNmae: PK_INVOLVEMENT
                   name: id
-                  type: NUMBER(19,0)
+                  type: BIGINT
+                  autoIncrement: true
+                  startWith: 1000
+                  incrementBy: 50
               - column:
                   name: name
                   type: VARCHAR2(255)
               - column:
                   name: parent_id
-                  type: NUMBER(19,0)
+                  type: BIGINT
             tableName: sector
         - addForeignKeyConstraint:
             baseColumnNames: parent_id
@@ -42,13 +45,16 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyNmae: PK_INVOLVEMENT
                   name: id
-                  type: NUMBER(19,0)
+                  type: BIGINT
+                  autoIncrement: true
+                  startWith: 1000
+                  incrementBy: 50
               - column:
                   name: name
                   type: VARCHAR2(255)
               - column:
                   name: sector_id
-                  type: NUMBER(19,0)
+                  type: BIGINT
               - column:
                   name: agreement
                   type: NUMBER(1,0)

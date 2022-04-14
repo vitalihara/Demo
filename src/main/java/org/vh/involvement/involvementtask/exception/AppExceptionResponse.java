@@ -12,7 +12,7 @@ public class AppExceptionResponse {
     private final String errorCode;
     private String field;
 
-    AppExceptionResponse(String message, String errorCode) {
+    public AppExceptionResponse(String message, String errorCode) {
         this.message = message;
         this.errorCode = errorCode;
     }

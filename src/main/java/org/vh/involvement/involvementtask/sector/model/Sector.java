@@ -9,8 +9,9 @@ import javax.persistence.*;
 @Entity
 public class Sector {
     @Id
-    @SequenceGenerator(name = "sector_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sector_id")
+/*    @SequenceGenerator(name = "sector_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sector_id")*/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @ManyToOne
