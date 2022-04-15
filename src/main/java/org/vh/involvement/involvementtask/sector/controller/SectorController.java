@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sectors")
 @RequiredArgsConstructor
-@PreAuthorize("hasRole('ROLE_ADMIN')")
+@PreAuthorize("hasAuthority('ADMIN')")
 public class SectorController {
 
     private final SectorService sectorService;
