@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.vh.involvement.involvementtask.exception.RecordNotFoundException;
 import org.vh.involvement.involvementtask.sector.dto.SectorDTO;
+import org.vh.involvement.involvementtask.sector.dto.SectorXmlDTO;
 import org.vh.involvement.involvementtask.sector.mapper.SectorMapper;
+import org.vh.involvement.involvementtask.sector.mapper.SectorXmlMapper;
 import org.vh.involvement.involvementtask.sector.model.Sector;
 import org.vh.involvement.involvementtask.sector.repository.SectorRepository;
 
@@ -18,10 +20,16 @@ import static java.util.stream.Collectors.toList;
 public class SectorService {
     private final SectorRepository sectorRepository;
     private final SectorMapper sectorMapper;
+    private final SectorXmlMapper sectorXmlMapper;
 
     public List<SectorDTO> getAllSectors() {
         List<Sector> sectors = sectorRepository.findAll();
         return sectors.stream().map(sectorMapper::toDTO).collect(toList());
+    }
+
+    public List<SectorXmlDTO> getAllSectorsXml() {
+        List<Sector> sectors = sectorRepository.findAll();
+        return sectors.stream().map(sectorXmlMapper::toDTO).collect(toList());
     }
 
     public SectorDTO getSector(Long id) throws RecordNotFoundException {
@@ -30,6 +38,15 @@ public class SectorService {
             throw new RecordNotFoundException("Sector does not exist", "sector.not_found");
         }
         return sectorMapper.toDTO(sector.get());
+    }
+
+
+    public SectorXmlDTO getSectorXml(Long id) throws RecordNotFoundException {
+        Optional<Sector> sector = sectorRepository.findById(id);
+        if (sector.isEmpty()) {
+            throw new RecordNotFoundException("Sector does not exist", "sector.not_found");
+        }
+        return sectorXmlMapper.toDTO(sector.get());
     }
 
     public void createSector(SectorDTO dto) {

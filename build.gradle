@@ -32,6 +32,7 @@ dependencies {
     implementation 'org.liquibase:liquibase-core'
     implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.2'
     compileOnly "org.mapstruct:mapstruct:$mapStructVersion"
     compileOnly "org.mapstruct:mapstruct-processor:$mapStructVersion"
 

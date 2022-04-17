@@ -1,12 +1,14 @@
 package org.vh.involvement.involvementtask.sector.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.vh.involvement.involvementtask.exception.RecordNotFoundException;
 import org.vh.involvement.involvementtask.sector.controller.validator.SectorValidator;
 import org.vh.involvement.involvementtask.sector.dto.SectorDTO;
+import org.vh.involvement.involvementtask.sector.dto.SectorXmlDTO;
 import org.vh.involvement.involvementtask.sector.service.SectorService;
 
 import javax.validation.Valid;
@@ -29,6 +31,17 @@ public class SectorController {
     @GetMapping
     public List<SectorDTO> getAllSectors() {
         return sectorService.getAllSectors();
+    }
+
+
+    @GetMapping(value = "/xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<SectorXmlDTO> getAllSectorsXml() {
+        return sectorService.getAllSectorsXml();
+    }
+
+    @GetMapping(value = "/xml/{id}", produces = MediaType.APPLICATION_XML_VALUE)
+    public SectorXmlDTO getSectorXml(@PathVariable Long id) throws RecordNotFoundException {
+        return sectorService.getSectorXml(id);
     }
 
     @GetMapping("/{id}")
