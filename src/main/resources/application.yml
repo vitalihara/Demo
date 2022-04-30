@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/quotes
     username: root
-    password: onofftelecom
+    password: changeme
     driver-class-name: com.mysql.cj.jdbc.Driver
 jwt:
   secret: $#GR24T4344$#$@#%WTEWTEAE%$6dsf

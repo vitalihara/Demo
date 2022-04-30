@@ -6,7 +6,7 @@ services:
       - SYS_NICE
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=onofftelecom
+      - MYSQL_ROOT_PASSWORD=changeme
       - MYSQL_PASSWORD=password
       - MYSQL_USER=user
       - MYSQL_DATABASE=quotes
